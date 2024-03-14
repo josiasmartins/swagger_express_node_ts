@@ -14,16 +14,25 @@ interface UpdateEmployeeRequest extends Request {
 }
 
 employeeRouter.get('/getEmployees', (req, res) => {
+        /**
+     *  #swagger.tags = ['Employees']
+     */
     res.status(200).json(employees);
 });
 
 employeeRouter.get('/getEmployee/:id', (req, res) => {
+           /**
+     *  #swagger.tags = ['Employees']
+     */
     const employee = employees.find(e => e.id === parseInt(req.params.id));
     if (!employee) res.status(404).json({ message: 'Employee not found' });
     res.status(200).json(employee);
 });
 
 employeeRouter.patch('/updateEmployee', (req: UpdateEmployeeRequest, res) => {
+           /**
+     *  #swagger.tags = ['Employees']
+     */
    const employee = employees.find(e => e.id === req.body.id);
     if (!employee) res.status(404).json({ message: 'Employee not found' });
 
