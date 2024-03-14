@@ -25,6 +25,12 @@ const doc = {
         }
     }
 };
-const outputFile = '../';
+const outputFile = '../swagger_output.json';
+// const outputFile = path.join(__dirname, '..', 'swagger_output.json');
 const endpointsFiles = ['./routes/routes'];
-(0, swagger_autogen_1.default)({ openapi: '3.0.0', doc: doc })(outputFile, endpointsFiles, doc);
+(0, swagger_autogen_1.default)({ openapi: '3.0.0', doc: doc })(outputFile, endpointsFiles, doc).then(() => {
+    console.log('Arquivo swagger_output.json gerado com sucesso!');
+})
+    .catch((error) => {
+    console.error('Erro ao gerar arquivo swagger_output.json:', error);
+});

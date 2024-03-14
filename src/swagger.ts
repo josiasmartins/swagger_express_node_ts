@@ -1,4 +1,5 @@
 import swaggerAutogen from 'swagger-autogen';
+import path from 'path';
 
 const doc = {
     info: {
@@ -22,7 +23,16 @@ const doc = {
     }
 };
 
-const outputFile = '../';
+const outputFile = '../swagger_output.json';
+
+// const outputFile = path.join(__dirname, '..', 'swagger_output.json');
+
+
 const endpointsFiles = ['./routes/routes'];
 
-swaggerAutogen({openapi: '3.0.0'})(outputFile, endpointsFiles, doc);
+swaggerAutogen({openapi: '3.0.0', doc: doc})(outputFile, endpointsFiles, doc).then(() => {
+    console.log('Arquivo swagger_output.json gerado com sucesso!');
+  })
+  .catch((error) => {
+    console.error('Erro ao gerar arquivo swagger_output.json:', error);
+  });

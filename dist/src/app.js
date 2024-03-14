@@ -35,6 +35,6 @@ const app = (0, express_1.default)();
 app.use(bodyParser.json());
 app.use('/', routes_1.routes);
 app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_output_json_1.default));
-app.listen(8080, () => {
-    console.log('Server started at port 8080');
+app.listen(3000, () => {
+    console.log('Server started at port 3000');
 });

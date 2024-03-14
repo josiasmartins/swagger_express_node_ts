@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/swagger.ts",
-    "dev": "node dist/src/app.js",
+    "dev": "ts-node src/swagger.ts && ts-node src/app.ts",
     "build": "tsc"
   },
   "keywords": [
