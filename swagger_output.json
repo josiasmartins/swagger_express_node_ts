@@ -84,7 +84,7 @@
         }
       }
     },
-    "/student/student": {
+    "/student/": {
       "get": {
         "tags": [
           "Student"
@@ -98,7 +98,7 @@
         }
       }
     },
-    "/student/student/{id}": {
+    "/student/{id}": {
       "get": {
         "tags": [
           "Student"

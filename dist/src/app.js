@@ -33,8 +33,8 @@ const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_output_json_1 = __importDefault(require("../swagger_output.json"));
 const app = (0, express_1.default)();
 app.use(bodyParser.json());
-app.use('/', routes_1.routes);
-app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_output_json_1.default));
-app.listen(3000, () => {
+app.use('/api', routes_1.routes);
+app.use('/docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_output_json_1.default));
+app.listen(3001, () => {
     console.log('Server started at port 3000');
 });

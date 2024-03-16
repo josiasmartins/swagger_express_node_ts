@@ -12,8 +12,11 @@
         }
     ],
     "paths": {
-        "/api/employee/getEmployees": {
+        "/employee/getEmployees": {
             "get": {
+                "tags": [
+                    "Employees"
+                ],
                 "description": "",
                 "responses": {
                     "200": {
@@ -22,8 +25,11 @@
                 }
             }
         },
-        "/api/employee/getEmployee/{id}": {
+        "/employee/getEmployee/{id}": {
             "get": {
+                "tags": [
+                    "Employees"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -45,9 +51,93 @@
                 }
             }
         },
-        "/api/employee/updateEmployee": {
+        "/employee/updateEmployee": {
             "patch": {
+                "tags": [
+                    "Employees"
+                ],
                 "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "example": "any"
+                                    },
+                                    "name": {
+                                        "example": "any"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/student/": {
+            "get": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Create a new user",
+                "description": "This endpoint will create a new user...",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/student/{id}": {
+            "get": {
+                "tags": [
+                    "Student"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Student"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK"

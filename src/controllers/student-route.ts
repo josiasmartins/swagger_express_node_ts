@@ -14,7 +14,7 @@ interface UpdateEmployeeRequest extends Request {
 }
 
 
-studentRoute.get('/student', (req, res) => {
+studentRoute.get('/', (req, res) => {
             /*
             #swagger.tags = ['Student']
             #swagger.summary = 'Create a new user'
@@ -23,7 +23,7 @@ studentRoute.get('/student', (req, res) => {
     res.status(200).json(employees);
 });
 
-studentRoute.get('/student/:id', (req, res) => {
+studentRoute.get('/:id', (req, res) => {
     /**
      *  #swagger.tags = ['Student']
      */
@@ -32,7 +32,7 @@ studentRoute.get('/student/:id', (req, res) => {
     res.status(200).json(employee);
 });
 
-studentRoute.patch('/student/:id', (req: UpdateEmployeeRequest, res) => {
+studentRoute.patch('/:id', (req: UpdateEmployeeRequest, res) => {
      /**
      *  #swagger.tags = ['Student']
      */

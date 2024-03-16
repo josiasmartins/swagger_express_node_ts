@@ -9,15 +9,24 @@ const employees = [
     { id: 3, name: 'John Smith' },
 ];
 exports.employeeRouter.get('/getEmployees', (req, res) => {
+    /**
+ *  #swagger.tags = ['Employees']
+ */
     res.status(200).json(employees);
 });
 exports.employeeRouter.get('/getEmployee/:id', (req, res) => {
+    /**
+*  #swagger.tags = ['Employees']
+*/
     const employee = employees.find(e => e.id === parseInt(req.params.id));
     if (!employee)
         res.status(404).json({ message: 'Employee not found' });
     res.status(200).json(employee);
 });
 exports.employeeRouter.patch('/updateEmployee', (req, res) => {
+    /**
+*  #swagger.tags = ['Employees']
+*/
     const employee = employees.find(e => e.id === req.body.id);
     if (!employee)
         res.status(404).json({ message: 'Employee not found' });
